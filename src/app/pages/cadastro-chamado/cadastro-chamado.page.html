@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Novo Chamado 🎫</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="tech-card animate-fade">
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Solicitante *</ion-label>
+      <ion-input type="text" [(ngModel)]="chamado.solicitante" placeholder="Nome do solicitante"></ion-input>
+    </ion-item>
+
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Setor</ion-label>
+      <ion-input type="text" [(ngModel)]="chamado.setor" placeholder="Setor de origem"></ion-input>
+    </ion-item>
+
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Título do Chamado *</ion-label>
+      <ion-input type="text" [(ngModel)]="chamado.titulo" placeholder="Ex: Impressora travada"></ion-input>
+    </ion-item>
+
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Descrição do Problema *</ion-label>
+      <ion-textarea [(ngModel)]="chamado.descricao" placeholder="Descreva o problema em detalhes"></ion-textarea>
+    </ion-item>
+
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Prioridade *</ion-label>
+      <ion-select [(ngModel)]="chamado.prioridade" placeholder="Selecione">
+        <ion-select-option value="Baixa">Baixa</ion-select-option>
+        <ion-select-option value="Média">Média</ion-select-option>
+        <ion-select-option value="Alta">Alta</ion-select-option>
+        <ion-select-option value="Urgente">Urgente</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Data de Abertura</ion-label>
+      <ion-input type="date" [(ngModel)]="chamado.dataAbertura"></ion-input>
+    </ion-item>
+
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Técnico Responsável *</ion-label>
+      <ion-select [(ngModel)]="chamado.tecnico" placeholder="Selecione o técnico">
+        <ion-select-option *ngFor="let t of tecnicos" [value]="t.nome">{{ t.nome }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" class="tech-button" (click)="salvar()">
+      Registrar Chamado ⚡
+    </ion-button>
+  </div>
+</ion-content>

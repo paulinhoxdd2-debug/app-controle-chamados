@@ -1,0 +1,142 @@
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+:root {
+  --ion-font-family: 'Roboto', sans-serif;
+  
+  /* Tech Theme Colors - Dark/Neon */
+  --ion-color-primary: #00e5ff;
+  --ion-color-primary-rgb: 0, 229, 255;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
+  --ion-color-primary-shade: #00cae0;
+  --ion-color-primary-tint: #1ae8ff;
+
+  --ion-background-color: #0a0e14;
+  --ion-background-color-rgb: 10, 14, 20;
+  --ion-text-color: #e0e0e0;
+  --ion-text-color-rgb: 224, 224, 224;
+
+  --ion-item-background: #141b24;
+  --ion-card-background: #1a222c;
+  
+  --glass-bg: rgba(26, 34, 44, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --neon-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: radial-gradient(circle at top right, #1a222c, #0a0e14);
+}
+
+ion-content {
+  --background: transparent;
+}
+
+.tech-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  margin: 16px;
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--neon-shadow);
+}
+
+.tech-input {
+  --background: rgba(255, 255, 255, 0.05);
+  --color: #ffffff;
+  --placeholder-color: #888;
+  --border-radius: 8px;
+  margin-bottom: 15px;
+
+  ion-label {
+    color: var(--ion-color-primary) !important;
+    font-weight: 600;
+  }
+
+  ion-select {
+    --placeholder-color: #aaa;
+    --color: #ffffff;
+    color: #ffffff;
+    width: 100%;
+  }
+
+  ion-input, ion-textarea {
+    --color: #ffffff;
+    color: #ffffff;
+  }
+}
+
+/* Fix for Select Popover/Action Sheet text visibility */
+.select-interface-option .alert-radio-label,
+.select-interface-option .action-sheet-button-inner,
+.popover-content .item-has-focus {
+  color: #ffffff !important;
+}
+
+.alert-wrapper, .action-sheet-container, .popover-viewport {
+  --background: #1a222c !important;
+  background: #1a222c !important;
+}
+
+.alert-title, .alert-sub-title, .alert-message, .alert-radio-label {
+  color: #ffffff !important;
+}
+
+.tech-button {
+  --border-radius: 8px;
+  --box-shadow: var(--neon-shadow);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-aberto { background: #ffc409; color: #000; }
+.status-atendimento { background: #3880ff; color: #fff; }
+.status-concluido { background: #2dd36f; color: #fff; }
+.status-cancelado { background: #eb445a; color: #fff; }
+
+.priority-urgente { color: #eb445a; font-weight: bold; }
+.priority-alta { color: #ff9b00; }
+.priority-media { color: #3880ff; }
+.priority-baixa { color: #2dd36f; }

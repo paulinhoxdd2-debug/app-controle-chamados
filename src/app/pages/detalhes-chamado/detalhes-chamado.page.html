@@ -1,0 +1,63 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lista-chamados"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhes do Chamado</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="excluir()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="chamado" class="animate-fade">
+    <div class="tech-card">
+      <div class="detail-header">
+        <span class="id-tag">CHAMADO #{{ chamado.id }}</span>
+        <span class="status-badge" [class]="'status-' + chamado.status.toLowerCase().replace(' ', '-')">{{ chamado.status }}</span>
+      </div>
+
+      <h1 class="detail-title">{{ chamado.titulo }}</h1>
+      
+      <div class="detail-grid">
+        <div class="detail-item">
+          <label>Solicitante</label>
+          <span>{{ chamado.solicitante }} ({{ chamado.setor }})</span>
+        </div>
+        <div class="detail-item">
+          <label>Data de Abertura</label>
+          <span>{{ chamado.dataAbertura | date:'dd/MM/yyyy' }}</span>
+        </div>
+        <div class="detail-item">
+          <label>Prioridade</label>
+          <span [class]="'priority-' + chamado.prioridade.toLowerCase()">{{ chamado.prioridade }}</span>
+        </div>
+        <div class="detail-item">
+          <label>Técnico Responsável</label>
+          <span>{{ chamado.tecnico }}</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <label>Descrição do Problema</label>
+        <p>{{ chamado.descricao }}</p>
+      </div>
+
+      <div class="detail-section" *ngIf="chamado.observacao">
+        <label>Observações do Atendimento</label>
+        <p class="obs-text">{{ chamado.observacao }}</p>
+      </div>
+
+      <ion-button expand="block" class="tech-button" (click)="atualizarStatus()">
+        Atualizar Status 📑
+      </ion-button>
+    </div>
+  </div>
+
+  <div *ngIf="!chamado" class="ion-text-center">
+    <p>Chamado não encontrado. 🚫</p>
+  </div>
+</ion-content>

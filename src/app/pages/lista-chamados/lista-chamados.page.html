@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Chamados Técnicos 📋</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="animate-fade">
+    <div *ngIf="chamados.length === 0" class="tech-card ion-text-center">
+      <p>Nenhum chamado encontrado. 🧐</p>
+    </div>
+
+    <div *ngFor="let c of chamados" class="tech-card" (click)="verDetalhes(c.id)">
+      <div class="card-header">
+        <span class="status-badge" [ngClass]="getStatusClass(c.status)">{{ c.status }}</span>
+        <span class="id-tag">#{{ c.id }}</span>
+      </div>
+      
+      <h2 class="card-title">{{ c.titulo }}</h2>
+      <p class="card-subtitle"><ion-icon name="person-outline"></ion-icon> {{ c.solicitante }}</p>
+      
+      <div class="card-footer">
+        <span class="prio-label" [ngClass]="getPriorityClass(c.prioridade)">
+          <ion-icon name="alert-circle-outline"></ion-icon> {{ c.prioridade }}
+        </span>
+        <span class="tech-name">
+          <ion-icon name="build-outline"></ion-icon> {{ c.tecnico }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/cadastro-chamado">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

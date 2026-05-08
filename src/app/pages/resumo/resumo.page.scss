@@ -1,0 +1,54 @@
+.total-card {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, var(--ion-color-primary), #0091ff);
+  color: #000;
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  .total-number {
+    font-size: 4rem;
+    font-weight: 800;
+  }
+}
+
+.section-title {
+  font-size: 0.9rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 30px 16px 10px;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-item {
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+
+  label {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  span {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}

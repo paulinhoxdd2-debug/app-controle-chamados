@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
+  <div class="login-container animate-fade">
+    <div class="logo-area">
+      <div class="icon-circle">
+        <ion-icon name="construct-outline"></ion-icon>
+      </div>
+      <h1>TechSupport</h1>
+      <p>Controle de Chamados Técnicos</p>
+    </div>
+
+    <div class="tech-card">
+      <ion-item class="tech-input" lines="none">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-input type="text" placeholder="Usuário" [(ngModel)]="usuario"></ion-input>
+      </ion-item>
+
+      <ion-item class="tech-input" lines="none">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Senha" [(ngModel)]="senha"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" class="tech-button" (click)="login()">
+        Acessar Sistema ⚡
+      </ion-button>
+    </div>
+
+    <div class="footer-info">
+      <p>v1.0.0 | Future Tech Solutions 🌐</p>
+    </div>
+  </div>
+</ion-content>

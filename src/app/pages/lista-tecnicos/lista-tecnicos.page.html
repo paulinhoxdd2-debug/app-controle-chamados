@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Técnicos Cadastrados 👥</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="animate-fade">
+    <div *ngIf="tecnicos.length === 0" class="tech-card ion-text-center">
+      <p>Nenhum técnico cadastrado. 🔎</p>
+    </div>
+
+    <div *ngFor="let tecnico of tecnicos" class="tech-card">
+      <ion-item lines="none" class="tecnico-item">
+        <ion-icon name="person-circle-outline" slot="start" color="primary"></ion-icon>
+        <ion-label>
+          <h2>{{ tecnico.nome }}</h2>
+          <p>Especialidade: {{ tecnico.especialidade }}</p>
+          <p>Contato: {{ tecnico.contato }}</p>
+          <p>Situação: 
+            <span [style.color]="tecnico.situacao === 'Ativo' ? '#2dd36f' : '#eb445a'">
+              {{ tecnico.situacao }}
+            </span>
+          </p>
+        </ion-label>
+        <ion-button slot="end" fill="clear" color="danger" (click)="excluir(tecnico)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </div>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/cadastro-tecnico">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

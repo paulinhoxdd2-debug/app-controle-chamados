@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Resumo Geral 📊</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="animate-fade">
+    <div class="tech-card total-card">
+      <h3>Total de Chamados</h3>
+      <div class="total-number">{{ totalChamados }}</div>
+    </div>
+
+    <div class="section-title">Por Status</div>
+    <div class="stats-grid">
+      <div class="stat-item tech-card status-aberto">
+        <label>Abertos</label>
+        <span>{{ porStatus['Aberto'] }}</span>
+      </div>
+      <div class="stat-item tech-card status-atendimento">
+        <label>Atendimento</label>
+        <span>{{ porStatus['Em atendimento'] }}</span>
+      </div>
+      <div class="stat-item tech-card status-concluido">
+        <label>Concluídos</label>
+        <span>{{ porStatus['Concluído'] }}</span>
+      </div>
+      <div class="stat-item tech-card status-cancelado">
+        <label>Cancelados</label>
+        <span>{{ porStatus['Cancelado'] }}</span>
+      </div>
+    </div>
+
+    <div class="section-title">Por Prioridade</div>
+    <div class="stats-grid">
+      <div class="stat-item tech-card priority-baixa">
+        <label>Baixa</label>
+        <span>{{ porPrioridade['Baixa'] }}</span>
+      </div>
+      <div class="stat-item tech-card priority-media">
+        <label>Média</label>
+        <span>{{ porPrioridade['Média'] }}</span>
+      </div>
+      <div class="stat-item tech-card priority-alta">
+        <label>Alta</label>
+        <span>{{ porPrioridade['Alta'] }}</span>
+      </div>
+      <div class="stat-item tech-card priority-urgente">
+        <label>Urgente</label>
+        <span>{{ porPrioridade['Urgente'] }}</span>
+      </div>
+    </div>
+  </div>
+</ion-content>

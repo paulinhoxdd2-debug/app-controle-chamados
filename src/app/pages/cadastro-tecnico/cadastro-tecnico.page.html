@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastrar Técnico 👨‍🔧</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="tech-card animate-fade">
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Nome Completo *</ion-label>
+      <ion-input type="text" [(ngModel)]="tecnico.nome" placeholder="Ex: Carlos Silva"></ion-input>
+    </ion-item>
+
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Especialidade *</ion-label>
+      <ion-select [(ngModel)]="tecnico.especialidade" placeholder="Selecione">
+        <ion-select-option value="Hardware">Hardware</ion-select-option>
+        <ion-select-option value="Software">Software</ion-select-option>
+        <ion-select-option value="Rede">Rede</ion-select-option>
+        <ion-select-option value="Impressora">Impressora</ion-select-option>
+        <ion-select-option value="Sistema interno">Sistema interno</ion-select-option>
+        <ion-select-option value="Outros">Outros</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Contato (E-mail ou Tel) *</ion-label>
+      <ion-input type="text" [(ngModel)]="tecnico.contato" placeholder="Ex: contato@tech.com"></ion-input>
+    </ion-item>
+
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Situação</ion-label>
+      <ion-select [(ngModel)]="tecnico.situacao">
+        <ion-select-option value="Ativo">Ativo</ion-select-option>
+        <ion-select-option value="Inativo">Inativo</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" class="tech-button" (click)="salvar()">
+      Salvar Técnico 💾
+    </ion-button>
+  </div>
+</ion-content>

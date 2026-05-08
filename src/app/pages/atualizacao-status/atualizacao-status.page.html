@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lista-chamados"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Atualizar Status 📝</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="chamado" class="tech-card animate-fade">
+    <div class="info-box">
+      <h3>{{ chamado.titulo }}</h3>
+      <p>ID: #{{ chamado.id }} | Solicitante: {{ chamado.solicitante }}</p>
+    </div>
+
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Novo Status *</ion-label>
+      <ion-select [(ngModel)]="novoStatus">
+        <ion-select-option value="Aberto">Aberto</ion-select-option>
+        <ion-select-option value="Em atendimento">Em atendimento</ion-select-option>
+        <ion-select-option value="Concluído">Concluído</ion-select-option>
+        <ion-select-option value="Cancelado">Cancelado</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="tech-input" lines="none">
+      <ion-label position="stacked">Observações do Atendimento</ion-label>
+      <ion-textarea rows="6" [(ngModel)]="novaObservacao" placeholder="Descreva o que foi feito no atendimento..."></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="block" class="tech-button" (click)="salvar()">
+      Salvar Atualização 💾
+    </ion-button>
+  </div>
+</ion-content>

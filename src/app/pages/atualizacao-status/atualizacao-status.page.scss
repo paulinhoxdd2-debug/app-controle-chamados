@@ -1,0 +1,17 @@
+.info-box {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  h3 {
+    color: var(--ion-color-primary);
+    margin: 0 0 5px 0;
+    font-weight: 700;
+  }
+
+  p {
+    color: #888;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+}
